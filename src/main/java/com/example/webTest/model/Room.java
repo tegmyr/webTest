@@ -3,6 +3,7 @@ package com.example.webTest.model;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -18,7 +19,7 @@ public class Room {
     @JoinTable(name="room_customer",
             joinColumns = @JoinColumn(name="room_id"),
             inverseJoinColumns = @JoinColumn(name="customer_id"))
-    private Set<Customer> customers;
+    private Set<Customer> customers = new HashSet<>();
 
     protected Room(){}
 

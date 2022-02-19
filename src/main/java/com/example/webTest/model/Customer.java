@@ -1,6 +1,7 @@
 package com.example.webTest.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -13,13 +14,15 @@ public class Customer {
     private String lastName;
 
     @ManyToMany(mappedBy ="customers" )
-    private Set<Room> rooms;
+    private Set<Room> rooms = new HashSet<>();
+
 
     protected Customer(){}
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+
     }
 
     @Override
