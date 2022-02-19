@@ -1,5 +1,6 @@
-package com.example.webTest;
+package com.example.webTest.repositories;
 
+import com.example.webTest.model.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

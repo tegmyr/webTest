@@ -1,9 +1,7 @@
-package com.example.webTest;
+package com.example.webTest.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Customer {
@@ -14,11 +12,29 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    protected Customer(){};
+    @ManyToMany(mappedBy ="customers" )
+    private Set<Room> rooms;
+
+    protected Customer(){}
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Customer customer = (Customer) o;
+
+        return id == customer.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
     }
 
     @Override
@@ -48,4 +64,13 @@ public class Customer {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public Set<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(Set<Room> rooms) {
+        this.rooms = rooms;
+    }
+
 }
