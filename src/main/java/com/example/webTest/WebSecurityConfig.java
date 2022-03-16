@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    @Bean
+    /*@Bean
     @Override
     public UserDetailsService userDetailsService(){
         UserDetails user =
@@ -54,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     }
-
+*/
 
 
 

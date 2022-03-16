@@ -7,7 +7,7 @@ import com.example.webTest.repositories.RoomRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Initializer implements CommandLineRunner {
     private final CustomerRepository customerRepository;
     private final RoomRepository roomRepository;
