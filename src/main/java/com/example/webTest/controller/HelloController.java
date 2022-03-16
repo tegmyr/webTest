@@ -38,7 +38,6 @@ public class HelloController {
     //@RequestMapping(value = "message", method = RequestMethod.GET)
     public String getUsers(Model model){
        model.addAttribute("messages",customerRepository.findAll()) ;
-
         return "users";
     }
 
@@ -50,16 +49,6 @@ public class HelloController {
          model.addAttribute("name",cust.getFirstName()) ;
          model.addAttribute("rooms", cust.getRooms());
         return "roomPerUser";
-    }
-
-
-
-
-    @GetMapping("/signup")
-    public String signUp(Customer customer){
-
-        System.out.println("Kom till signup");
-        return "adduser";
     }
 
     @PostMapping("/adduser")
